@@ -1,12 +1,14 @@
 const moment = require("moment");
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 app.listen(3001, () => {
   console.log("Servidor levantado en el puerto 3001");
 });
 
 app.use(express.json());
+app.use(cors("*"));
 
 app.get("/", (req, res) => {
   return res.send("lenny was here");
